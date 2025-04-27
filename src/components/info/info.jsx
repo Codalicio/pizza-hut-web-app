@@ -3,12 +3,11 @@ import Card from "../card/Card";
 import { basicDetails } from "../db/db";
 
 function Info({ isActive }) {
-  let [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const changeHandler = (e) => {
     setSearchTerm(e.target.value);
   };
-  console.log(searchTerm);
 
   const filteredData = basicDetails[isActive].products.filter((item) =>
     item.title.toLowerCase().includes(searchTerm.toLowerCase())
